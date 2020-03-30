@@ -27,23 +27,27 @@ public class PessoaDAOApp implements PessoaDAO {
 
 		return true;
 	}
+
+	public Pessoa findById(int id) {
+		return conn.find(Pessoa.class, id);
+	}
 	
 	public void editar (Pessoa pessoa) {
-		/** Obtém o objeto da transação com o banco de dados via entityManager */
+		/** Obtï¿½m o objeto da transaï¿½ï¿½o com o banco de dados via entityManager */
 		EntityTransaction tx = conn.getTransaction();
 		
 		try {
-			/** Iniciando transação com o banco de dados */
+			/** Iniciando transaï¿½ï¿½o com o banco de dados */
 			tx.begin();
 			
-			/** Realizar operação de update na tabela do banco */
+			/** Realizar operaï¿½ï¿½o de update na tabela do banco */
 			conn.persist(pessoa);
 
-			/** Commita ou executa ou finaliza a transação proposta */
+			/** Commita ou executa ou finaliza a transaï¿½ï¿½o proposta */
 			tx.commit();
 			
 		} catch (Exception variavelException) {
-			/** em caso de exceção deverá da rollback na transação */
+			/** em caso de exceï¿½ï¿½o deverï¿½ da rollback na transaï¿½ï¿½o */
 			tx.rollback();
 		}
 	}
@@ -55,18 +59,13 @@ public class PessoaDAOApp implements PessoaDAO {
 		conn.persist(pessoa);
 	}
 
-
-	@Override
-	public Pessoa pesquisar(String cpf) {
+	public List<Pessoa> pesquisar(String nomePessoa) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
-	@Override
 	public List<Endereco> selecionarTodos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

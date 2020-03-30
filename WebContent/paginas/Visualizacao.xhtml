@@ -4,6 +4,16 @@
     xmlns:p="http://primefaces.org/ui">
 <head>
 <title>VISUALIZAÇÃO DE USUARIOS</title>
+    <style type="text/css">
+    .ui-datalist {
+        width:300px;
+        margin-bottom: 20px;
+    }
+
+    .ui-datalist-item {
+        padding:3px;
+    }
+</style>
 </head>
 <body>
 	<h:form>  
@@ -25,6 +35,10 @@
             <p:commandButton type="button" value="Buscar" icon="pi pi-home" />
         </f:facet>
     </p:menubar>
+
+    <p:dataList value="#{PessoaBean.pessoas}" var="pessoa" type="ordered">
+        #{pessoa.nome}
+    </p:dataList>
 </h:form>
 
 </body>

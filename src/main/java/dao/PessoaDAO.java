@@ -7,14 +7,15 @@ import entidade.Pessoa;
 
 public interface PessoaDAO {
 	
-	public boolean inserir (Pessoa pessoa);
+	boolean inserir (Pessoa pessoa);
 	
-	public void editar (Pessoa pessoa);
+	void editar (Pessoa pessoa);
 	
-	public void excluir (Pessoa pessoa);
+	void excluir (Pessoa pessoa);
 	
-	public Pessoa pesquisar(String cpf);
+	List<Pessoa> pesquisar(String nomePessoa);
 	
-	public List<Endereco> selecionarTodos();
+	List<Endereco> selecionarTodos();
 
+	Pessoa findById(int id);
 }
