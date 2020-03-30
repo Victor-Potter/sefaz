@@ -17,7 +17,7 @@ public class AcessoBean {
 	
 	public AcessoBean () { }
 	
-	private static final String VISUALIZACAO = "";
+	private static final String VISUALIZACAO = "paginas/Visualizacao.xhtml";
 	
 	public void entrar () throws IOException {
 		if (this.emailAcesso.equals(this.usuarioAdmin) &&

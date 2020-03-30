@@ -3,6 +3,8 @@ package entidade;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,8 +25,9 @@ public class Endereco {
 	@Column
 	private String complemento;
 		
-	
-	private Pessoa pessoa;	
+	@ManyToOne
+	@JoinColumn(name = "PESSOA_ID", referencedColumnName = "ID", nullable = false)
+	private Pessoa pessoa;
 	
 	public int getId() {
 		return id;

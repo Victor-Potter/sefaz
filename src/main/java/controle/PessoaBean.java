@@ -25,34 +25,39 @@ public class PessoaBean {
 	
 	private List<Pessoa> pessoas;
 	
+	
 	private PessoaBean pessoaBean;
 	
 	private static final String NOVO = "pessoa/novo.xhtml";
 	private static final String EDITAR = "pessoa/editar.xhtml";
 
 	
-	
 	public PessoaBean () {
-		/** Obtém a instancia de memória corrente */
-		EntityManager instanceDeMemoria = JpaUtil.getEntityManager();
-
-		/** Cria uma nova instancia em memória do pessoaDAO x12\32F = new PessoaDAO */
-		this.pessoaDAO = new PessoaDAOApp(instanceDeMemoria);
-
-		this.pessoas = new ArrayList <Pessoa>();
-		Pessoa usuario = new Pessoa ();
 		
-		usuario.setCpf("123.456.789-00");
-		List<Endereco> enderecos = new ArrayList<Endereco>();
-		usuario.setEndereco(enderecos);
-		usuario.setIdade(31);
-		usuario.setNome("Teste 1");
-		usuario.setSexo("Masculino");
-		usuario.setSenha("admin");
-				
-		this.pessoas.add(usuario);
-		
-		System.out.println(this.pessoas);
+		try {
+			/** Obtém a instancia de memória corrente */
+			EntityManager instanceDeMemoria = JpaUtil.getEntityManager();
+
+			/** Cria uma nova instancia em memória do pessoaDAO x12\32F = new PessoaDAO */
+			this.pessoaDAO = new PessoaDAOApp(instanceDeMemoria);
+
+			this.pessoas = new ArrayList <Pessoa>();
+			Pessoa usuario = new Pessoa ();
+			
+			usuario.setCpf("123.456.789-00");
+			List<Endereco> enderecos = new ArrayList<Endereco>();
+			usuario.setEndereco(enderecos);
+			usuario.setIdade(31);
+			usuario.setNome("Teste 1");
+			usuario.setSexo("Masculino");
+			usuario.setSenha("admin");
+					
+			this.pessoas.add(usuario);
+			
+			System.out.println(this.pessoas);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 
 	public void novo() throws IOException {

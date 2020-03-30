@@ -29,7 +29,7 @@ public class Pessoa {
 	@Column
 	private String senha = "admin";
 	
-	@OneToMany (mappedBy="endereco", cascade= CascadeType.ALL)
+	@OneToMany (mappedBy="PESSOA_ID", cascade= CascadeType.ALL)
 	private List<Endereco> endereco;
 	
 	public void setId(int value) {
