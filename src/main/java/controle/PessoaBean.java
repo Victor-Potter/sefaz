@@ -17,6 +17,7 @@ import util.JpaUtil;
 @ManagedBean(name = "PessoaBean")
 @RequestScoped
 public class PessoaBean {
+	
 	private PessoaDAOApp pessoaDAO;
 	private Pessoa pessoa;
 	private Endereco endereco;
@@ -25,9 +26,12 @@ public class PessoaBean {
 	private List<Pessoa> pessoas;
 	
 	private PessoaBean pessoaBean;
+	
 	private static final String NOVO = "pessoa/novo.xhtml";
 	private static final String EDITAR = "pessoa/editar.xhtml";
 
+	
+	
 	public PessoaBean () {
 		/** Obtém a instancia de memória corrente */
 		EntityManager instanceDeMemoria = JpaUtil.getEntityManager();
@@ -47,6 +51,8 @@ public class PessoaBean {
 		usuario.setSenha("admin");
 				
 		this.pessoas.add(usuario);
+		
+		System.out.println(this.pessoas);
 	}
 
 	public void novo() throws IOException {
@@ -73,5 +79,9 @@ public class PessoaBean {
 	
 	public List<Pessoa> pesquisar(String nomePessoa) {
 		return this.pessoaDAO.pesquisar(nomePessoa);
+	}
+	
+	public List<Pessoa> getPessoa() {
+		return this.pessoas;
 	}
  }

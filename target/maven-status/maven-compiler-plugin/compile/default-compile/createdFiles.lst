@@ -1,0 +1,7 @@
+dao\PessoaDAO.class
+entidade\Endereco.class
+dao\PessoaDAOApp.class
+entidade\Pessoa.class
+controle\PessoaBean.class
+util\JpaUtil.class
+controle\AcessoBean.class

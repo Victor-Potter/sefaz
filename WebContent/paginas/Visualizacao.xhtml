@@ -2,7 +2,7 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:p="http://primefaces.org/ui">
-<head>
+<h:head>
 <title>VISUALIZAÇÃO DE USUARIOS</title>
     <style type="text/css">
     .ui-datalist {
@@ -14,32 +14,15 @@
         padding:3px;
     }
 </style>
-</head>
-<body>
+</h:head>
+<h:body>
 	<h:form>  
     <p:growl id="messages"/>
  
-    <p:menubar>
-        <p:submenu label="Cadastro" icon="pi pi-file">      
-            <p:submenu label="Novo" icon="pi pi-briefcase"></p:submenu>
-            <p:submenu label="Editar" icon="pi pi-briefcase"></p:submenu>                                   
-                                   
-        </p:submenu>
- 
-        <p:submenu label="Listar Usuarios" icon="pi pi-pencil"></p:submenu>
- 
-        <p:menuitem value="Excluir Cadastro" url="EDICAO" icon="pi pi-times" />
- 
-        <f:facet name="options">
-            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Nome do Usuário"/>
-            <p:commandButton type="button" value="Buscar" icon="pi pi-home" />
-        </f:facet>
-    </p:menubar>
-
     <p:dataList value="#{PessoaBean.pessoas}" var="pessoa" type="ordered">
         #{pessoa.nome}
     </p:dataList>
 </h:form>
 
-</body>
+</h:body>
 </html>

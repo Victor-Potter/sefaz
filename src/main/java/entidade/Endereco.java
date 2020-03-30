@@ -1,14 +1,30 @@
 package entidade;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "ENDERECO")
 public class Endereco {
+	@Id
+	@Column
+	@SequenceGenerator(name = "S_ENDERECO", sequenceName = "S_ENDERECO", allocationSize = 1)
 	private int id;
+	@Id
+	@Column
 	private int pessoa_id;
+	@Column
 	private int numero;
+	@Column
 	private String rua;
+	@Column
 	private String complemento;
 		
-	private Pessoa pessoa;
 	
+	private Pessoa pessoa;	
 	
 	public int getId() {
 		return id;
